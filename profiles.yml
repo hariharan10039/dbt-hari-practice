@@ -1,0 +1,13 @@
+my_first_dbt: # this needs to match the profile: in your dbt_project.yml file
+  target: dev
+  outputs:
+    dev:
+      type: bigquery
+      method: service-account
+      keyfile: C:\Users\hariharan.j05\.dbt\big_query_credential.json # replace this with the full path to your keyfile
+      project: polar-storm-278705 # Replace this with your project id
+      dataset: dbt_hari # Replace this with dbt_your_name, e.g. dbt_bob
+      threads: 1
+      timeout_seconds: 300
+      location: US
+      priority: interactive
